@@ -1,18 +1,18 @@
 # Task Management REST API
 
-A lightweight RESTful API for managing task workflows. Built with Node.js, Express, SQLite, and Zod for input validation. Includes database persistence, request schema validation, structured error responses, and automated integration tests.
+It is a lightweight RESTful API designed for managing task workflows. It has been developed using Node.js, Express, SQLite, and Zod for input validation. The API includes features such as database persistence, validation of request schemas, structured error responses, and automated integration tests.
 
 ---
 
 ## Features
 
-- **CRUD Operations**: Complete endpoint coverage for creating, reading, updating, and deleting tasks.
-- **Persistent Data Storage**: File-based SQLite database with auto-created tables on boot.
-- **Request Validation**: Schema-based payload validation using Zod.
-- **Status Patching**: Dedicated endpoint for fast status transitions (`pending` -> `in-progress` -> `completed`).
+- **CRUD Operations**: The endpoint provides full support for creating, reading, updating, and deleting tasks.
+- **Persistent Data Storage**: A file-based SQLite database, which creates its tables automatically when the system boots.
+- **Request Validation**: The use of Zod for payload validation based on a schema.
+- **Status Patching**: There is a dedicated endpoint which allows for quick status transitions (from `pending` to `in-progress` to `completed`).
 - **Query Filtering**: Filter task lists by status or priority.
-- **Centralized Error Handling**: Standardized JSON responses for 400 Bad Request, 404 Not Found, and 500 Internal Server Error.
-- **HTTP Logging**: Automated request logging using Morgan.
+- **Centralized Error Handling**: The system uses standardized JSON responses for errors corresponding to a 400 Bad Request, a 404 Not Found, and a 500 Internal Server Error.
+- **HTTP Logging**: Morgan automatically logs requests.
 
 ---
 
@@ -32,25 +32,25 @@ A lightweight RESTful API for managing task workflows. Built with Node.js, Expre
 ```
 task-management-api/
 ├── data/
-│   └── tasks.db           # SQLite database file (created automatically)
+│   └── tasks.db           # The SQLite database file (created automatically)
 ├── src/
 │   ├── config/
-│   │   └── db.js          # SQLite connection setup & table schema
+│   │   └── db.js          # Sets up SQLite connection and table structure
 │   ├── controllers/
-│   │   └── taskController.js # Route request handlers
+│   │   └── taskController.js # Handles route requests
 │   ├── middleware/
-│   │   ├── errorHandler.js   # Global error handling & 404 handler
-│   │   └── validate.js       # Zod schema validation middleware
+│   │   ├── errorHandler.js   # Handles all errors and 404s
+│   │   └── validate.js       # Zod schema check middleware
 │   ├── routes/
 │   │   └── taskRoutes.js     # API route mappings
 │   ├── schemas/
 │   │   └── taskSchema.js     # Zod payload schemas
 │   ├── services/
-│   │   └── taskService.js    # Business logic & SQL queries
-│   ├── app.js             # Express app setup
-│   └── server.js          # App entrypoint
+│   │   └── taskService.js    # Business logic and SQL queries
+│   ├── app.js             # Sets up the Express app
+│   └── server.js          # Main file that starts the app
 ├── tests/
-│   └── tasks.test.js      # Integration test suite
+│   └── tasks.test.js      # Integration test files
 ├── .env.example
 ├── .gitignore
 ├── package.json
@@ -63,11 +63,11 @@ task-management-api/
 
 ### Prerequisites
 
-Make sure you have Node.js (v18 or higher) and npm installed.
+Make sure you have Node.js version 18 or higher and npm installed.
 
 ### Installation
 
-1. Clone the repository and navigate into the folder:
+1. First, clone the repository and then go into the folder:
    ```bash
    git clone https://github.com/vita1288/task-management-api.git
    cd task-management-api
@@ -83,12 +83,12 @@ Make sure you have Node.js (v18 or higher) and npm installed.
    cp .env.example .env
    ```
 
-4. Start the development server:
+4. Begin the development server:
    ```bash
    npm run dev
    ```
 
-The API server will run at `http://localhost:3000`.
+The API server can be accessed via `http://localhost:3000`.
 
 ---
 
@@ -244,7 +244,7 @@ Every task contains the following properties:
 
 ---
 
-### 5. Update Task Status Only
+### 5. Only Update Task Status
 - **URL**: `PATCH /api/tasks/:id/status`
 - **Headers**: `Content-Type: application/json`
 - **Body Payload**:
@@ -319,9 +319,3 @@ Run the integration test suite with Jest:
 ```bash
 npm test
 ```
-
----
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
