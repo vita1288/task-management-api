@@ -69,7 +69,7 @@ Make sure you have Node.js (v18 or higher) and npm installed.
 
 1. Clone the repository and navigate into the folder:
    ```bash
-   git clone <your-repository-url>
+   git clone https://github.com/vita1288/task-management-api.git
    cd task-management-api
    ```
 
@@ -314,41 +314,11 @@ When a request fails validation or an error occurs, the API returns standard HTT
 
 ## Running Tests
 
-Run the full integration test suite with Jest:
+Run the integration test suite with Jest:
 
 ```bash
 npm test
 ```
-
-Tests use an in-memory SQLite instance to ensure clean, isolated execution without touching the local disk file.
-
----
-
-## GitHub Deployment Guide
-
-To push this repository to your GitHub account:
-
-1. Initialize git and make your first commit:
-   ```bash
-   git init
-   git add .
-   git commit -m "Initial commit: Task Management REST API implementation"
-   ```
-
-2. Set the default branch name to `main`:
-   ```bash
-   git branch -M main
-   ```
-
-3. Link your GitHub remote repository:
-   ```bash
-   git remote add origin https://github.com/YOUR_USERNAME/task-management-api.git
-   ```
-
-4. Push code to GitHub:
-   ```bash
-   git push -u origin main
-   ```
 
 ---
 
