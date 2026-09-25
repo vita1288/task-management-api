@@ -67,7 +67,7 @@ Make sure you have Node.js version 18 or higher and npm installed.
 
 ### Installation
 
-1. First, clone the repository and then go into the folder:
+First, clone the repository and then go into the folder:
    ```bash
    git clone https://github.com/vita1288/task-management-api.git
    cd task-management-api
@@ -308,14 +308,3 @@ When a request fails validation or an error occurs, the API returns standard HTT
     }
   ]
 }
-```
-
----
-
-## Running Tests
-
-Run the integration test suite with Jest:
-
-```bash
-npm test
-```
